@@ -19,12 +19,12 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use(cors());
 
 // Set routes
-app.use('/api/users', api);
-app.use('/api/exam', api);
-app.use('/api/training', api);
-app.use('/api/test', api);
-app.use('/api/dashboard', api);
-app.use('/api/community', api);
+app.use('/api/user', api.user);
+app.use('/api/exam', api.exam);
+app.use('/api/training', api.training);
+app.use('/api/test', api.test);
+app.use('/api/dashboard', api.dashboard);
+app.use('/api/community', api.community);
 
 // END MIDDLEWARE
 
