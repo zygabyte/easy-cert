@@ -1,8 +1,8 @@
 module.exports = {
-    user: null,
-    exam: null,
-    training: null,
-    test: null,
-    dashboard: null,
-    community: null
+    user: require('./user'),
+    exam: require('./exam'),
+    training: require('./training'),
+    test: require('./test'),
+    dashboard: require('./dashboard'),
+    community: require('./community')
 };

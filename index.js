@@ -8,17 +8,18 @@ const api = require('./routes');
 const app = express();
 
 // MIDDLEWARE
-// for data posted
+// // for handling cors
+app.use(cors());
+
+// // for data posted
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// for registering root location for serving static files
+// // for registering root location for serving static files
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// for handling cors
-app.use(cors());
 
-// Set routes
+// // Set routes
 app.use('/api/user', api.user);
 app.use('/api/exam', api.exam);
 app.use('/api/training', api.training);
@@ -31,4 +32,4 @@ app.use('/api/community', api.community);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(PORT, () => console.log('server listening on port ' + PORT));
