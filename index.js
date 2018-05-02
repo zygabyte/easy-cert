@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 const api = require('./routes');
+const config = require('./config');
 
 // initializes the express app
 const app = express();
@@ -18,6 +19,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 // // for registering root location for serving static files
 app.use(express.static(path.join(__dirname, 'dist')));
 
+// set secret for jwt token
+app.set('superSecret', config.secret);
 
 // // Set routes
 app.use('/api/user', api.user);
