@@ -6,6 +6,7 @@ const router = express.Router();
 const app = express();
 const superSecret = app.get('superSecret');
 
+// to register a new user
 router.post('/register', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
