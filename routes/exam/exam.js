@@ -18,7 +18,7 @@ router.get('/', verifyToken, (req, res) => {
 });
 
 //exams/id
-router.get('/:id', (req, res) => {
+router.get('/:id', verifyToken, (req, res) => {
     const exam_id = req.params.id;
 
     ExamModel.findOne({_id: exam_id})
@@ -45,7 +45,7 @@ router.post('/', verifyToken, (req, res) => {
         description: description,
         amount: amount,
         date: date,
-        training_centers: training_centers,
+        training_centers: training_centers
     }, (err, newExam) => {
         if (err) return res.status(500).send({success: false, message: 'Error in adding Exam', error: err});
 

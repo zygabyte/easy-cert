@@ -35,7 +35,7 @@ router.post('/register', (req, res) => {
             }
 
             const token = jwt.sign(newUser, superSecret, {expiresIn: '24h'});
-            return res.status(200).send({success: true,  data: newUser, token: token, message: 'Successfully added user'});
+            return res.status(201).send({success: true,  data: newUser, token: token, message: 'Successfully added user'});
         });
     });
 });
