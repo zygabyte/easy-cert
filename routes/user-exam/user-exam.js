@@ -40,6 +40,7 @@ router.post('/', verifyToken, (req, res) => {
     const user = req.body.user;
     const exam = req.body.exam;
     const loan = req.body.loan;
+    const exam_status = req.body.exam_status;
     const bank_statement = req.body.bank_statement;
     const staff_id = req.body.staff_id;
     const tax_id = req.body.tax_id;
@@ -51,6 +52,7 @@ router.post('/', verifyToken, (req, res) => {
         user: user,
         exam: exam,
         loan: loan,
+        exam_status: exam_status,
         bank_statement: bank_statement,
         staff_id: staff_id,
         tax_id: tax_id,

@@ -5,6 +5,7 @@ const UserExamSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     exam: {type: Schema.Types.ObjectId, ref: 'Exam'},
     loan: {type: Schema.Types.ObjectId, ref: 'Loan'},
+    exam_status: {type: String, enum: ['approved', 'disapproved'], default: 'disapproved'},
     bank_statement: {data: Buffer, contentType: String},
     staff_id: {data: Buffer, contentType: String},
     tax_id: {type: String},
